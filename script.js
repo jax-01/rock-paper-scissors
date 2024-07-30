@@ -30,33 +30,36 @@ const getHumanChoice = () => {
 const playRound = (humanChoice, computerChoice) => {
     if (humanChoice === "rock") {
         if (computerChoice === "scissors") {
-            humanScore++;
             console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            return "win";
         } else if (computerChoice === "paper") {
-            computerScore++;
             console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            return "lose";
         } else {
             console.log("Draw!");
+            return "draw";
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "rock") {
-            humanScore++;
             console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            return "win";
         } else if (computerChoice === "scissors") {
-            computerScore++;
             console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            return "lose";
         } else {
             console.log("Draw!");
+            return "draw";
         }
     } else {
         if (computerChoice === "paper") {
-            humanScore++;
             console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            return "win";
         } else if (computerChoice === "rock") {
-            computerScore++;
             console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            return "lose";
         } else {
             console.log("Draw!");
+            return "draw";
         }
     }
 }
@@ -66,8 +69,21 @@ const playGame = () => {
     let humanScore = 0;
     let computerScore = 0;
 
-    const human = getHumanChoice();
-    const computer = getComputerChoice();
+    while (rounds != 5) {
+        const human = getHumanChoice();
+        const computer = getComputerChoice();
+        
+        let result = playRound(human, computer);
+        if (result === "win") {
+            humanScore++;
+        } else if (result === "lose"){
+            computerScore++;
+        }
 
+        console.log(`Player Score: ${humanScore}`);
+        console.log(`Computer Score: ${computerScore}`);
 
+        rounds += 1;
+    }
 }
+
