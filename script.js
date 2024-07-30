@@ -13,3 +13,7 @@ const getComputerChoice = () => {
     }
 }
 
+const getHumanChoice = () => {
+    let humanChoice = prompt("Select between: 'rock', 'paper' or 'scissors'");
+    document.getElementById("human-choice").innerHTML = `Player: ${humanChoice}`;
+}
