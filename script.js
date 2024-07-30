@@ -17,6 +17,18 @@ const getComputerChoice = () => {
 }
 
 const getHumanChoice = () => {
-    let humanChoice = prompt("Select between: 'rock', 'paper' or 'scissors'");
-    document.getElementById("human-choice").innerHTML = `Player: ${humanChoice}`;
+    do {
+        let humanChoice = prompt("Select between: 'rock', 'paper' or 'scissors'");
+        humanChoice = humanChoice.toLowerCase();
+        if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+            document.getElementById("human-choice").innerHTML = `Player: ${humanChoice}`;
+            return humanChoice;
+        } else {
+            continue;
+        }
+    } while (true);
 }
+
+// const playRound = (humanChoice, computerChoice) => {
+
+// }
