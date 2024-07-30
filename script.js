@@ -82,8 +82,11 @@ const playGame = () => {
 
         console.log(`Player Score: ${humanScore}`);
         console.log(`Computer Score: ${computerScore}`);
+        console.log("----------");
 
         rounds += 1;
     }
 }
+
+playGame();
 
