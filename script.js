@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 const getComputerChoice = () => {
     let choice = Math.floor(Math.random() * 3);
     
@@ -62,3 +59,8 @@ const playRound = (humanChoice, computerChoice) => {
         }
     }
 }
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+let humanScore = 0;
+let computerScore = 0;
