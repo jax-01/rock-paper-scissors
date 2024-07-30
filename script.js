@@ -2,23 +2,24 @@ const getComputerChoice = () => {
     let choice = Math.floor(Math.random() * 3);
     
     if (choice === 0) {
-        document.getElementById("computer-choice").innerHTML = "Computer: Rock";
+        console.log("Computer: rock");
         return "rock";
-    } else if (choice === 1) { 
-        document.getElementById("computer-choice").innerHTML = "Computer: Paper";
+    } else if (choice === 1) {
+        console.log("Computer: paper");
         return "paper";
     } else {
-        document.getElementById("computer-choice").innerHTML = "Computer: Scissors";
+        console.log("Computer: scissors");
         return "scissors";
     }
 }
 
 const getHumanChoice = () => {
+    let humanChoice;
     do {
-        let humanChoice = prompt("Select between: 'rock', 'paper' or 'scissors'");
+        humanChoice = prompt("Select between: 'rock', 'paper' or 'scissors'");
         humanChoice = humanChoice.toLowerCase();
         if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
-            document.getElementById("human-choice").innerHTML = `Player: ${humanChoice}`;
+            console.log(`Player: ${humanChoice}`);
             return humanChoice;
         } else {
             continue;
@@ -60,7 +61,9 @@ const playRound = (humanChoice, computerChoice) => {
     }
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+const human = getHumanChoice();
+const computer = getComputerChoice();
 let humanScore = 0;
 let computerScore = 0;
+
+playRound(human, computer);
