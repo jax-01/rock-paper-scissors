@@ -61,9 +61,13 @@ const playRound = (humanChoice, computerChoice) => {
     }
 }
 
-const human = getHumanChoice();
-const computer = getComputerChoice();
-let humanScore = 0;
-let computerScore = 0;
+const playGame = () => {
+    let rounds = 0;
+    let humanScore = 0;
+    let computerScore = 0;
 
-playRound(human, computer);
+    const human = getHumanChoice();
+    const computer = getComputerChoice();
+
+
+}
