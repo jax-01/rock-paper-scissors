@@ -107,6 +107,9 @@ const playGame = () => {
             }
 
             updateScore(result);
+            const separator = document.createElement("p");
+            separator.textContent = "------------------------------";
+            resultsContainer.appendChild(separator);
 
             if (humanScore === 5 || computerScore === 5) {
                 buttons.forEach((button) => {
