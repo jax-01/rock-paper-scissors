@@ -23,20 +23,6 @@ const getComputerChoice = () => {
     }
 }
 
-const getHumanChoice = () => {
-    let humanChoice;
-    do {
-        humanChoice = prompt("Select between: 'rock', 'paper' or 'scissors'");
-        humanChoice = humanChoice.toLowerCase();
-        if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
-            console.log(`Player: ${humanChoice}`);
-            return humanChoice;
-        } else {
-            continue;
-        }
-    } while (true);
-}
-
 const playRound = (humanChoice, computerChoice) => {
     const roundResult = document.createElement("p");
 
