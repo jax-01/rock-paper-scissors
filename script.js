@@ -35,37 +35,48 @@ const getHumanChoice = () => {
 }
 
 const playRound = (humanChoice, computerChoice) => {
+    const roundResult = document.createElement("p");
+
     if (humanChoice === "rock") {
         if (computerChoice === "scissors") {
-            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            roundResult.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+            resultsContainer.appendChild(roundResult);
             return "win";
         } else if (computerChoice === "paper") {
-            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+            resultsContainer.appendChild(roundResult);
             return "lose";
         } else {
-            console.log("Draw!");
+            roundResult.textContent = "Draw!";
+            resultsContainer.appendChild(roundResult);
             return "draw";
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "rock") {
-            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            roundResult.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+            resultsContainer.appendChild(roundResult);
             return "win";
         } else if (computerChoice === "scissors") {
-            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+            resultsContainer.appendChild(roundResult);
             return "lose";
         } else {
-            console.log("Draw!");
+            roundResult.textContent = "Draw!";
+            resultsContainer.appendChild(roundResult);
             return "draw";
         }
     } else {
         if (computerChoice === "paper") {
-            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            roundResult.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+            resultsContainer.appendChild(roundResult);
             return "win";
         } else if (computerChoice === "rock") {
-            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+            resultsContainer.appendChild(roundResult);
             return "lose";
         } else {
-            console.log("Draw!");
+            roundResult.textContent = "Draw!";
+            resultsContainer.appendChild(roundResult);
             return "draw";
         }
     }
