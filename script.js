@@ -68,15 +68,34 @@ const playGame = () => {
     let humanScore = 0;
     let computerScore = 0;
 
-    const human = getHumanChoice();
-    const computer = getComputerChoice();
-    
-    let result = playRound(human, computer);
-    if (result === "win") {
-        humanScore++;
-    } else if (result === "lose"){
-        computerScore++;
-    }
+    const buttons = document.querySelectorAll("button");
+    let result;
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            let userChoice = button.id;
+
+            switch (userChoice) {
+                case "rock":
+                    result = playRound("rock", getComputerChoice());
+                    break;
+                case "paper":
+                    result = playRound("paper", getComputerChoice());
+                    break;
+                case "scissors":
+                    result = playRound("scissors", getComputerChoice());
+                    break;
+                default:
+                    console.log("Invalid choice");
+            }
+
+            if (result === "win") {
+                humanScore++;
+            } else if (result === "lose") {
+                computerScore++;
+            }
+        });
+    });
 
     console.log(`Player Score: ${humanScore}`);
     console.log(`Computer Score: ${computerScore}`);
