@@ -104,31 +104,29 @@ const playGame = () => {
 
     buttons.forEach((button) => {
         button.addEventListener("click", (e) => {
-            if (humanScore !== 5 || computerScore !== 5) {
-                let userChoice = button.id;
+            let userChoice = button.id;
 
-                switch (userChoice) {
-                    case "rock":
-                        result = playRound("rock", getComputerChoice());
-                        break;
-                    case "paper":
-                        result = playRound("paper", getComputerChoice());
-                        break;
-                    case "scissors":
-                        result = playRound("scissors", getComputerChoice());
-                        break;
-                    default:
-                        console.log("Invalid choice");
-                }
+            switch (userChoice) {
+                case "rock":
+                    result = playRound("rock", getComputerChoice());
+                    break;
+                case "paper":
+                    result = playRound("paper", getComputerChoice());
+                    break;
+                case "scissors":
+                    result = playRound("scissors", getComputerChoice());
+                    break;
+                default:
+                    console.log("Invalid choice");
+            }
 
-                updateScore(result);
+            updateScore(result);
 
-                if (humanScore === 5 || computerScore === 5) {
-                    buttons.forEach((button) => {
-                        button.disabled = true;
-                    });
-                    console.log("Game over!");
-                }
+            if (humanScore === 5 || computerScore === 5) {
+                buttons.forEach((button) => {
+                    button.disabled = true;
+                });
+                console.log("Game over!");
             }
             
         });
