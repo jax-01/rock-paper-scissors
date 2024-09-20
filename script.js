@@ -1,14 +1,21 @@
+const resultsContainer = document.querySelector("#results-container");
+
 const getComputerChoice = () => {
     let choice = Math.floor(Math.random() * 3);
+
+    const computerChoice = document.createElement("p");
     
     if (choice === 0) {
-        console.log("Computer: rock");
+        computerChoice.textContent = "Computer: Rock";
+        resultsContainer.appendChild(computerChoice);
         return "rock";
     } else if (choice === 1) {
-        console.log("Computer: paper");
+        computerChoice.textContent = "Computer: Paper";
+        resultsContainer.appendChild(computerChoice);
         return "paper";
     } else {
-        console.log("Computer: scissors");
+        computerChoice.textContent = "Computer: Scissors";
+        resultsContainer.appendChild(computerChoice);
         return "scissors";
     }
 }
