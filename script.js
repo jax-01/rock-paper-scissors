@@ -123,10 +123,6 @@ const playGame = () => {
             updateScore(result);
         });
     });
-
-    // console.log(`Player Score: ${humanScore}`);
-    // console.log(`Computer Score: ${computerScore}`);
-    // console.log("----------");
 }
 
 playGame();
