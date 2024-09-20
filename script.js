@@ -65,27 +65,22 @@ const playRound = (humanChoice, computerChoice) => {
 }
 
 const playGame = () => {
-    let rounds = 0;
     let humanScore = 0;
     let computerScore = 0;
 
-    while (rounds != 5) {
-        const human = getHumanChoice();
-        const computer = getComputerChoice();
-        
-        let result = playRound(human, computer);
-        if (result === "win") {
-            humanScore++;
-        } else if (result === "lose"){
-            computerScore++;
-        }
-
-        console.log(`Player Score: ${humanScore}`);
-        console.log(`Computer Score: ${computerScore}`);
-        console.log("----------");
-
-        rounds += 1;
+    const human = getHumanChoice();
+    const computer = getComputerChoice();
+    
+    let result = playRound(human, computer);
+    if (result === "win") {
+        humanScore++;
+    } else if (result === "lose"){
+        computerScore++;
     }
+
+    console.log(`Player Score: ${humanScore}`);
+    console.log(`Computer Score: ${computerScore}`);
+    console.log("----------");
 }
 
 playGame();
