@@ -115,7 +115,9 @@ const playGame = () => {
                 buttons.forEach((button) => {
                     button.disabled = true;
                 });
-                console.log("Game over!");
+                const finalResult = document.createElement("p");
+                finalResult.textContent = "Game over: " + (humanScore > computerScore ? "You won" : "You lost");
+                resultsContainer.appendChild(finalResult);
             }
             
         });
