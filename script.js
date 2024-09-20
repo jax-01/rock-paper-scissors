@@ -1,5 +1,8 @@
 const resultsContainer = document.querySelector("#results-container");
 
+let humanScore = 0;
+let computerScore = 0;
+
 const getComputerChoice = () => {
     let choice = Math.floor(Math.random() * 3);
 
@@ -82,9 +85,19 @@ const playRound = (humanChoice, computerChoice) => {
     }
 }
 
+const updateScore = (result) => {
+    if (result === "win") {
+        humanScore++;
+    } else if (result === "lose") {
+        computerScore++;
+    }
+
+    const runningScore = document.createElement("p");
+    runningScore.textContent = `Player Score: ${humanScore} | Computer Score: ${computerScore}`;
+    resultsContainer.appendChild(runningScore);
+}
+
 const playGame = () => {
-    let humanScore = 0;
-    let computerScore = 0;
 
     const buttons = document.querySelectorAll("button");
     let result;
@@ -107,17 +120,13 @@ const playGame = () => {
                     console.log("Invalid choice");
             }
 
-            if (result === "win") {
-                humanScore++;
-            } else if (result === "lose") {
-                computerScore++;
-            }
+            updateScore(result);
         });
     });
 
-    console.log(`Player Score: ${humanScore}`);
-    console.log(`Computer Score: ${computerScore}`);
-    console.log("----------");
+    // console.log(`Player Score: ${humanScore}`);
+    // console.log(`Computer Score: ${computerScore}`);
+    // console.log("----------");
 }
 
 playGame();
